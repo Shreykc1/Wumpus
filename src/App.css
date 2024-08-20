@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes moveAgent {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    100% {
+      transform: translateX(calc((var(--cell-size) - 100%) * (var(--x) - 1))) translateY(calc((var(--cell-size) - 100%) * (4 - var(--y))));
+    }
+  }
+  
+  .agent {
+    animation: moveAgent 0.3s ease-in-out forwards;
+    --cell-size: 25%;
+    --x: 1;
+    --y: 1;
+  }
